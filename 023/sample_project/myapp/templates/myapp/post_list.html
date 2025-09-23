@@ -1,0 +1,18 @@
+<html>
+<head><title>Posts</title></head>
+<body>
+    <h1>All Posts</h1>
+    <a href="{}"> Add New Post</a>
+    <hr>
+    {% for i in posts %}
+        <h3>{{ i.title }}</h3>
+        <p>{{ i.content }}</p>
+        <i>By {{ i.author }} | {{ i.created_at }}</i><br>
+        <a href="{}"> Edit</a> |
+        <a href="{}"> Delete</a>
+        <hr>
+    {% empty %}
+        <p>No posts available.</p>
+    {% endfor %}
+</body>
+</html>

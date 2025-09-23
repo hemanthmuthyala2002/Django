@@ -1,0 +1,14 @@
+{% extends 'example.html' %}
+
+{% block title %}<title>Home Page</title>{% endblock %}
+
+{% block content %}
+<h2>This is Home Page</h2>
+<h3>My name is {{name}}</h3>
+
+<ul>
+{% for i in friends %}
+  <li>{{forloop.counter}}. {{i}}</li>
+{% endfor %}
+</ul>
+{% endblock %}}
