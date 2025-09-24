@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}<b>Hemanth Solutions</b>{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-section">
+            <a href="{% url 'home'%}">
+            <img src="{% static 'images/Logo.png' %}" alt="Logo" class="logo">
+            </a>
+            <span class="company-name">Hemanth Solutions</span>
+        </div>
+        <div class="auth-links">
+            <a href="{% url 'login' %}">Login</a> |
+            <a href="{% url 'register' %}">Register</a>
+        </div>
+    </header>
+
+    {% block content %}{% endblock %}
+</body>
+</html>
+
+
+
