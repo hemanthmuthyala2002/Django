@@ -1,0 +1,169 @@
+<style>
+  /* ===== CONTACT SECTION ===== */
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 60px);
+  background: #e9f7ef; /* soft light green */
+  padding: 40px 20px;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ===== INTRO TEXT ===== */
+.contact-intro {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1b5e20; /* dark green */
+  margin-bottom: 10px;
+}
+
+.contact-description {
+  font-size: 16px;
+  color: #2e7d32; /* medium green */
+}
+
+/* ===== FORM CONTAINER ===== */
+.contact-form {
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-top: 6px solid #2e7d32; /* green accent line */
+}
+
+/* ===== FORM FIELDS ===== */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1b5e20;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #a5d6a7;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #1b5e20;
+  background-color: #f9fff9;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #43a047;
+  box-shadow: 0 0 4px rgba(67, 160, 71, 0.4);
+  outline: none;
+}
+
+.form-textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+/* ===== SUBMIT BUTTON ===== */
+.form-submit {
+  width: 100%;
+  background: #43a047; /* main green */
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.form-submit:hover {
+  background: #388e3c; /* darker hover green */
+  transform: scale(1.02);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 600px) {
+  .contact-form {
+    padding: 22px;
+  }
+
+  .contact-title {
+    font-size: 26px;
+  }
+
+  .contact-description {
+    font-size: 15px;
+  }
+}
+
+</style>
+<section class="contact-section">
+  <div class="contact-intro">
+    <h2 class="contact-title">Contact_us</h2>
+    <p class="contact-description">
+      Please fill out the form below, and we’ll get back to you shortly.
+    </p>
+  </div>
+
+  <form class="contact-form" action="{% url 'contactus' %}" method="POST">
+    {% csrf_token %}
+
+    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+    <input type="hidden" name="subject" value="New Contact Form Submission">
+    <input type="hidden" name="from_name" value="Hemanth Solutions Website">
+
+    <div class="form-group-container">
+
+      <div class="form-group">
+        <label for="name" class="form-label">Full Name</label>
+        <input id="name" name="name" class="form-input" placeholder="Enter your full name" type="text" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="form-label">Email Address</label>
+        <input id="email" name="email" class="form-input" placeholder="Enter your email address" type="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input id="phone" name="phone" class="form-input" placeholder="+91 98765 43210" type="text">
+      </div>
+
+      <div class="form-group">
+        <label for="place" class="form-label">Place</label>
+        <input id="place" name="place" class="form-input" placeholder="Enter your city or location" type="text">
+      </div>
+
+      <div class="form-group">
+        <label for="subject" class="form-label">Subject</label>
+        <input id="subject" name="user_subject" class="form-input" placeholder="Enter subject" type="text">
+      </div>
+
+      <div class="form-group">
+        <label for="message" class="form-label">Your Message</label>
+        <textarea id="message" name="message" class="form-textarea" placeholder="Write your message here..." required></textarea>
+      </div>
+    </div>
+
+    <button class="form-submit" type="submit">Send Message</button>
+  </form>
+</section>

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<div class="card">
+    <h2>Register</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label>Username</label>
+        <input type="text" name="username" placeholder="Enter your full Name" required>
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter your Email" required>
+        <label>Password</label>
+        <input type="password" name="password" required>
+        <label>DOB</label>
+        <input type="date" name="dob" required>
+        <label>Gender</label>
+        <div class="radio-group">
+            <label><input type="radio" name="gender" value="Male" required> Male</label>
+            <label><input type="radio" name="gender" value="Female" required> Female</label>
+        </div>
+        <label>Mobile No</label>
+        <input type="text" name="mobile" placeholder="+91" required>
+        <button type="submit">Register</button>
+    </form>
+    <div class="link">
+        Already have an account? <a href="{% url 'login' %}">Login here</a>
+    </div>
+</div>
+{% endblock %}

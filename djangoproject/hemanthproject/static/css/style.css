@@ -137,6 +137,48 @@ html,body {
   .form-container { width: 92%; padding: 18px; }
   .auth-links { margin-top: 8px; }
 }
+.form-container {
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .form-container h2 {
+      text-align: center;
+    }
+    .form-container label {
+      display: block;
+      margin-top: 10px;
+    }
+    .form-container input, .form-container select, .form-container button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .gender-options {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5px;
+    }
+    .gender-options label {
+      flex: 1;
+      text-align: center;
+    }
+    button {
+      margin-top: 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 
 
 

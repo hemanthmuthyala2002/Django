@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Welcome{% endblock %}
+{% block content %}
+<div class="card">
+    <h2>Welcome to Hemanth Solutions</h2>
+    <p style="text-align:center; color:#555; margin-bottom:20px;">
+        Your one-stop solution for modern web projects.
+    </p>
+    <div style="display:flex; justify-content:center; gap:20px;">
+        <a href="{% url 'login' %}" style="text-decoration:none;">
+            <button style="width:120px;">Login</button>
+        </a>
+        <a href="{% url 'register' %}" style="text-decoration:none;">
+            <button style="width:120px; background-color:#ff9800; border:none;">Register</button>
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,109 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Submitted Successfully</title>
+  <style>
+    /* ===== Body ===== */
+    body {
+      background-color: #f0fff4; /* light mint green */
+      color: #1b5e20;
+      font-family: 'Poppins', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+
+    /* ===== Success Badge (larger size) ===== */
+    .success-badge {
+      width: 200px;      /* increased size */
+      height: 200px;     /* increased size */
+      background: #22c55e33; /* light green transparent circle */
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+      animation: pop 0.6s ease;
+    }
+
+    .success-badge svg {
+      width: 120px;       /* bigger checkmark */
+      height: 120px;
+      stroke: #22c55e;
+      stroke-width: 5;    /* thicker line */
+      fill: none;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0); }
+      60% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    /* ===== Success Text ===== */
+    .success-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #1b5e20;
+    }
+
+    .success-text {
+      font-size: 1.1rem;
+      color: #4caf50;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ===== Back Button ===== */
+    .back-link {
+      background: #22c55e;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.8rem 1.8rem;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .back-link:hover {
+      background: #1e7d32;
+      transform: scale(1.05);
+    }
+
+    /* ===== Small screen adjustments ===== */
+    @media (max-width: 480px) {
+      .success-title { font-size: 1.6rem; }
+      .success-text { font-size: 1rem; }
+      .success-badge { width: 150px; height: 150px; }
+      .success-badge svg { width: 90px; height: 90px; stroke-width: 4; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="success-badge">
+    <svg viewBox="0 0 24 24">
+      <path d="M5 13l4 4L19 7" />
+    </svg>
+  </div>
+
+  <div class="success-title">Form Submitted Successfully!</div>
+  <div class="success-text">
+    Thank you! Your message has been received.<br>
+    We'll get back to you soon!
+  </div>
+
+  
+  <a href="{% url 'contactus' %}" class="back-link">Go back</a>
+
+</body>
+</html>
+
